@@ -3,15 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Website</title>
-</head>
-<body>
-    <p>
-        <h1><center><b>DAILY TIMES</b></center></h1>
-        <h3><center>Your Trusted Source of Latest Updates</center></h3>
-        <center><a href="index.html">World</a>|<a href="tags.html">Sports</a>|<a href="forms.html">Entertainment</a>|<a href="multimedia.html">Podcasts</a>|<a href="Exp 1.html">Updates</a></center>
-
-    </p>
+    <title>Global News Today - Your Trusted News Source</title>
     
+    <!-- CSS Styling Section - Simple and Basic -->
+    <style>
+        /* Remove default margins */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+        }
+
+        /* Header styling */
+        header {
+            background-color: darkblue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Navigation menu styling */
+        nav {
+            background-color: gray;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Navigation links */
+        nav a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        /* Main content area */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /* News section boxes */
+        .news-section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Section headings */
+        h2 {
+            color: darkblue;
+        }
+
+        /* Images */
+        img {
+            width: 500px;
+            height: 300px;
+        }
+
+        /* YouTube video container */
+        .video-container {
+            width: 600px;
+            height: 400px;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: darkblue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section: Website title -->
+    <header>
+        <h1>Global News Today</h1>
+        <p>Latest News & Updates</p>
+    </header>
+
+    <!-- Navigation Menu: Links to different pages -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#world">World</a>
+        <a href="#tech">Technology</a>
+        <a href="#sports">Sports</a>
+        <a href="https://www.bbc.com" target="_blank">BBC News</a>
+        <a href="https://www.cnn.com" target="_blank">CNN</a>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        
+        <!-- NEWS ARTICLE 1: With Image -->
+        <section id="home" class="news-section">
+            <h2>Breaking News: Technology Innovation Summit 2025</h2>
+            
+            <p>
+                The annual Technology Innovation Summit kicked off today with groundbreaking announcements 
+                from major tech companies. Industry leaders gathered to discuss the future of artificial 
+                intelligence, sustainable technology, and digital transformation.
+            </p>
+            
+            <!-- Image Tag: Displays news image -->
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800" 
+                 alt="Technology Conference">
+            
+            <p>
+                The summit featured keynote speeches from prominent CEOs and unveiled several innovative 
+                products set to revolutionize technology.
+            </p>
+            
+            <!-- Hyperlink: External link to another website -->
+            <a href="https://www.techcrunch.com" target="_blank">Read more on TechCrunch</a>
+        </section>
+
+        <!-- NEWS ARTICLE 2: YouTube Video Embedded -->
+        <section id="tech" class="news-section">
+            <h2>Watch: Latest Tech Trends Video</h2>
+            
+            <p>
+                Check out this informative video discussing the latest trends in technology and innovation.
+            </p>
+            
+            <!-- YouTube Video Embedding -->
+            <!-- iframe tag embeds YouTube video -->
+            <!-- Replace VIDEO_ID with actual YouTube video ID -->
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="YouTube video" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <p>
+                Stay tuned for more video content covering technology updates.
+            </p>
+        </section>
+
+        <!-- NEWS ARTICLE 3: Audio Player -->
+        <section id="world" class="news-section">
+            <h2>Listen: Daily News Podcast</h2>
+            
+            <p>
+                Listen to our daily news podcast featuring top stories from around the world.
+            </p>
+            
+            <!-- Audio Tag: Plays audio files -->
+            <!-- controls attribute adds play/pause buttons -->
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+            
+            <p>
+                Our podcast is updated daily with fresh news content.
+            </p>
+        </section>
+
+        <!-- NEWS ARTICLE 4: Video Player -->
+        <section id="sports" class="news-section">
+            <h2>Sports Highlight: Championship Game</h2>
+            
+            <p>
+                Watch the highlights from last night's championship game.
+            </p>
+            
+            <!-- Video Tag: Plays video files -->
+            <!-- controls attribute adds play/pause buttons -->
+            <video width="500" height="300" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+            
+            <p>
+                The game ended with a dramatic finish in the final minutes.
+            </p>
+            
+            <!-- Hyperlink to external sports website -->
+            <a href="https://www.espn.com" target="_blank">More sports news on ESPN</a>
+        </section>
+
+        <!-- NEWS ARTICLE 5: More Hyperlinks -->
+        <section class="news-section">
+            <h2>More News Sources</h2>
+            
+            <p>Visit these trusted news sources:</p>
+            
+            <!-- List of hyperlinks -->
+            <ul>
+                <li><a href="https://www.bbc.com" target="_blank">BBC News</a></li>
+                <li><a href="https://www.cnn.com" target="_blank">CNN</a></li>
+                <li><a href="https://www.reuters.com" target="_blank">Reuters</a></li>
+                <li><a href="https://www.aljazeera.com" target="_blank">Al Jazeera</a></li>
+                <li><a href="https://www.theguardian.com" target="_blank">The Guardian</a></li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Global News Today. All rights reserved.</p>
+        <p>Contact: info@globalnews.com</p>
+    </footer>
+
 </body>
 </html>
