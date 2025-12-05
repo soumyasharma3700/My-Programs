@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        
+        .header {
+            display: block;
+            background-color: #9be90a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #050112;
+        }
+
+        .header h1 {
+            display: inline;
+            color: #070707;
+            font-size: 24px;
+        }
+
+        .header .website {
+            color: #050505;
+        }
+
+        .header .navigation {
+            color: #6911ec;
+        }
+
+        
+        .nav-container {
+            display: block;
+            background-color: #c0f2d0;
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid #ccc;
+        }
+
+        
+        .clearfix {
+            clear: both;
+        }
+
+       
+        .nav-row {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .nav-item-inline {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #d0336d;
+            color: #000;
+            text-decoration: none;
+            border: 1px solid #5f9ea0;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        
+        .nav-item-float {
+            float: left;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #5b53f9;
+            color: #000;
+            text-decoration: none;
+            border: 1px solid #228b22;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        .nav-item-inline:hover,
+        .nav-item-float:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }       
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to <span class="website">TechHub</span> <span class="navigation"></span></h1>
+    </div>
+
+    <div class="nav-container">
+       
+        <div class="nav-row">
+            <a href="#" class="nav-item-inline">Home</a>
+            <a href="#" class="nav-item-inline">About</a>
+            <a href="#" class="nav-item-inline">Services</a>
+            <a href="#" class="nav-item-inline">Contact</a>
+        </div>
+
+        
+        <div class="nav-row">
+            <a href="#" class="nav-item-float">Dashboard</a>
+            <a href="#" class="nav-item-float">Profile</a>
+            <a href="#" class="nav-item-float">Messages</a>
+            <a href="#" class="nav-item-float">Logout</a>
+        </div>
+
+       <div class="clearfix"></div>
+
+        
+    </div>
+</body>
+</html>
