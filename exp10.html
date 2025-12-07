@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Responsive Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a1a2e;
+            color: white;
+            padding: 18px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 1.6rem;
+        }
+
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+            padding: 10px 18px;
+            display: block;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #16213e;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+
+        
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .actions a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cart {
+            background-color: #0f3460;
+            position: relative;
+        }
+
+        .cart:hover {
+            background-color: #16213e;
+            transform: scale(1.05);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e74c3c;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .login {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .login:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        
+        #menu-toggle {
+            display: none;
+        }
+
+        
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-btn {
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+        }
+
+        
+        .features {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-card .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .footer-opacity {
+            opacity: 0.9;
+        }
+
+        .footer-small {
+            margin-top: 20px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .nav-links a {
+                font-size: 0.95rem;
+                padding: 8px 14px;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+    
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: #16213e;
+                padding: 20px 0;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+                gap: 0;
+            }
+
+            .nav-links li {
+                margin: 0;
+            }
+
+            .nav-links a {
+                padding: 15px 30px;
+                border-radius: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger::before {
+                content: "☰";
+            }
+
+            .actions .cart,
+            .actions .login {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+
+            
+            #menu-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+
+            #menu-toggle:checked ~ .hamburger::before {
+                content: "✕";
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .logo-icon {
+                font-size: 1.2rem;
+                padding: 6px 12px;
+            }
+        }
+
+        
+        @media (max-width: 480px) {
+            .actions {
+                gap: 8px;
+            }
+
+            .actions a {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🛍️</span>
+            EShop
+        </div>
+
+        
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger"></label>
+
+        
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Deals</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        
+        <div class="actions">
+            <a href="#" class="cart">
+                🛒 Cart
+                <span class="cart-badge">3</span>
+            </a>
+            <a href="#" class="login">👤 Login</a>
+        </div>
+    </nav>
+
+    
+    <section class="hero">
+        <h1>Welcome to EShop! 🎉</h1>
+        <p>Your one-stop destination for all shopping needs</p>
+        <button class="hero-btn">Start Shopping Now</button>
+    </section>
+
+    
+    <div class="features">
+        <div class="feature-card">
+            <div class="icon">🚚</div>
+            <h3>Free Delivery</h3>
+            <p>Get free shipping on orders above ₹500. </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">💳</div>
+            <h3>Secure Payment</h3>
+            <p>100% secure payment gateway.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">🔄</div>
+            <h3>Easy Returns</h3>
+            <p>7-day return policy. </p>
+        </div>
+    </div>
+
+    
+</body>
+</html>
