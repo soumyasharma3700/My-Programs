@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <style>
+    nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgb(9, 0, 5) 0%, transparent 100%);
+            transition: background-color 0.3s;
+        }
+        nav.scrolled {
+            background-color: #3b1b9a;
+        }
+
+        .logo {
+            color: #d70909;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #09080b;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+         .nav-links a:hover {
+            color: #eae4ee;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .profile {
+            width: 32px;
+            height: 32px;
+            background-color: #e50914;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+        }
+        
+        </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo">Netflix</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#tv">TV Shows</a></li>
+            <li><a href="#movies">Movies</a></li>
+            <li><a href="#new">New & Popular</a></li>
+            <li><a href="#list">My List</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button type="submit">Go</button>
+        </div>
+        <div class="nav-right">
+            <div class="profile"></div>
+        </div>
+    </nav>
+    >
+
+</body>
+</html>
